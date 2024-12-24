@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "builds": [
-    { "src": "db.json", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "data/questions.json", "dest": "/" }
-  ]
-}
