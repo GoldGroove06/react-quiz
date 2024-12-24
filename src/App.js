@@ -69,7 +69,7 @@ function App() {
       const res = await fetch("https://react-quiz-one-ashy.vercel.app/api/questions")
       const data = await res.json()
       
-      dispatch({type: "dataReceived", payload: [data]})
+      dispatch({type: "dataReceived", payload: data})
        
     }
     fetchData()
