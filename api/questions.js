@@ -1,4 +1,4 @@
-const data = require('./questions.json');
+const data = require('./data/questions.json');
 
 console.log(data)
 
