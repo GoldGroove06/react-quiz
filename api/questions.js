@@ -1,5 +1,7 @@
-const data = require('./data/question.json');
+const data = require('./questions.json');
 
-export default function handler(req, res) {
-  res.status(200).json(data);
+console.log(data)
+
+export function GET(request) {
+  return new Response(data);
 }
