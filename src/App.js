@@ -81,7 +81,7 @@ function App() {
 
   if (status === "ready") {
     numQuestions = questions.length;
-    maxPossiblePoints = questions.reduce((prev, cur) => prev + cur.points, 0);
+    
   }
   return (
     <div className="App">
