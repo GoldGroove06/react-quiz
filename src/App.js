@@ -70,15 +70,19 @@ function App() {
       const data = await res.json()
       
       dispatch({type: "dataReceived", payload: data})
-      
+       
     }
     fetchData()
    
    }, [])
+   
+   let numQuestions = 0;
+  let maxPossiblePoints = 0;
 
-  const numQuestions = questions.length
-  const maxPossiblePoints = questions.reduce((prev, cur) => 
-  prev + cur.points, 0)
+  if (status === "ready") {
+    numQuestions = questions.length;
+    maxPossiblePoints = questions.reduce((prev, cur) => prev + cur.points, 0);
+  }
   return (
     <div className="App">
         <Header/>
