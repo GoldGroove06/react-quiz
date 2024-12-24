@@ -65,10 +65,15 @@ function App() {
   const [{questions, status, index, answer, points, highscore, secondsRemaining}, dispatch] = useReducer(reducer, initialState)
 
   useEffect(function () {
-    fetch("https://react-quiz-one-ashy.vercel.app/api/questions")
-    .then((res) => res.json())
-    .then((data) => dispatch({type: "dataReceived", payload: data}))
-    .catch((err) => dispatch({type: "dataFailed"}))
+    async function fetchData() {
+      const res = await fetch("https://react-quiz-one-ashy.vercel.app/api/questions")
+      const data = await res.json()
+      
+      dispatch({type: "dataReceived", payload: data})
+      
+    }
+    fetchData()
+   
    }, [])
 
   const numQuestions = questions.length
