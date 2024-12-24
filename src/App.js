@@ -65,7 +65,7 @@ function App() {
   const [{questions, status, index, answer, points, highscore, secondsRemaining}, dispatch] = useReducer(reducer, initialState)
 
   useEffect(function () {
-    fetch("http://localhost:8000/questions")
+    fetch("https://react-quiz-pearl-six.vercel.app/api/questions")
     .then((res) => res.json())
     .then((data) => dispatch({type: "dataReceived", payload: data}))
     .catch((err) => dispatch({type: "dataFailed"}))
